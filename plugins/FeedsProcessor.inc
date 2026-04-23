@@ -1282,7 +1282,6 @@ abstract class FeedsProcessor extends FeedsPlugin {
       if ($target === 'guid' || $target === 'url') {
         $entity_id = db_select('feeds_item')
           ->fields('feeds_item', array('entity_id'))
-          ->condition('feed_nid', $source->feed_nid)
           ->condition('entity_type', $this->entityType())
           ->condition('id', $source->id)
           ->condition($target, $value)
